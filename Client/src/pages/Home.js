@@ -127,7 +127,7 @@ function Home() {
                           {car.name}
                         </p>
                         <p style={{ color: "#222f35" }}>
-                          Rs{car.rentPerHour} Per Hour /-
+                          ${car.rentPerHour} Per Hour /-
                         </p>
                       </div>
                       <div>

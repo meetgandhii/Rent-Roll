@@ -39,7 +39,7 @@ function BookingCar() {
     }
   }, [cars]);
   useEffect(() => {
-    setTotalAmount(totalMins * Math.ceil(car.rentPerHour / 60));
+    setTotalAmount(totalMins/60 * car.rentPerHour);
     if (driver) {
       setTotalAmount(totalAmount + 5 * totalMins);
     }
@@ -155,7 +155,7 @@ function BookingCar() {
                   <span className="car-data2">{car.name}</span>
                 </p>
                 <p>
-                  <span className="car-data2">{car.rentPerHour} Rs/-</span>
+                  <span className="car-data2">{car.rentPerHour} $</span>
                 </p>
                 <p>
                   <span className="car-data2">{car.fuelType}</span>
@@ -201,7 +201,7 @@ function BookingCar() {
                   }}
                 >
                   <p>
-                    Total Minutes : <b>{totalMins}</b>
+                    Total Hours : <b>{totalMins/60}</b>
                   </p>
                   <Checkbox
                     onChange={(e) => {
@@ -215,7 +215,7 @@ function BookingCar() {
                     <span style={{ color: "white" }}> Driver Required</span>
                   </Checkbox>
                   <h3 style={{ color: "white" }}>
-                    Total Amount : {totalAmount}
+                    Total Amount : ${totalAmount}
                   </h3>
                   <button
             className="btn1"

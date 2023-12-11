@@ -20,12 +20,19 @@ function AdminHome() {
   useEffect(() => {
     dispatch(getAllCars());
   }, []);
-  const handleSearch = () => {
+  const handleSearch = (searchValue) => {
+    setSearchTerm(searchValue);
+
     const filteredCars = cars.filter((car) =>
-      car.name.toLowerCase().includes(searchTerm.toLowerCase())
+      car.name.toLowerCase().includes(searchValue.toLowerCase())
     );
+
     setTotalCars(filteredCars);
   };
+
+  useEffect(() => {
+    setTotalCars(cars);
+  }, []);
   useEffect(() => {
     setTotalCars(cars);
   }, [cars]);
@@ -43,15 +50,15 @@ function AdminHome() {
                 <a href="/addcar">ADD CAR</a>
               </button>
               <div>
-              <input
-                type="text"
-                placeholder="Search by name"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <button className="btnAdd" onClick={handleSearch}>
-                Search
-              </button>
+                <input
+                  type="text"
+                  placeholder="Search by name"
+                  value={searchTerm}
+                  onChange={(e) => handleSearch(e.target.value)}
+                />
+                <button className="btnAdd" onClick={handleSearch}>
+                  Search
+                </button>
               </div>
             </div>
           </Col>
