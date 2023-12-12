@@ -16,6 +16,11 @@ function DefaultLayout(props) {
         <a href="/contact">Contact Us</a>
      
       </Menu.Item> 
+      {user && (
+        <Menu.Item>
+          <Link to={`/profile/${user.username}`}>Profile</Link>
+        </Menu.Item>
+      )}
       {!user &&(
          (localStorage.removeItem("lastClickedURL"), null),
       <Menu.Item>

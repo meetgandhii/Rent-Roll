@@ -33,6 +33,40 @@ const id = generateObjectId();
   }
 };
 
+exports.updateDetails = async (req, res) => {
+  try {
+    const username = req.params.username;
+    const { email, password, phone } = req.body;
+    const updatedUser = await User.findOneAndUpdate({ username }, { email, password, phone }, { new: true });
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.json(updatedUser);
+  } catch (error) {
+    console.error('Error updating user data:', error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+}
+
+exports.getDetails = async (req, res) => {
+  try {
+    const username = req.params.username;
+    
+    const user = await User.findOne({ username: { $regex: new RegExp(`^${username}$`, 'i') } });
+
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.json(user);
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
+}
+
 exports.getAllUsers = async (req, res) => {
   try {
     

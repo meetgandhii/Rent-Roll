@@ -11,7 +11,7 @@ import AddCar from "./pages/AddCar";
 import EditCar from "./pages/EditCar";
 import AdminHome from "./pages/AdminHome";
 import Contact from "./components/Contact";
-
+import Profile from "./pages/Profile";
 function App() {
   return (
     <div className="App">
@@ -45,6 +45,16 @@ function App() {
             element={
               <ProtectedRoute>
                 <Home />
+              </ProtectedRoute>
+            }
+          ></Route>
+
+<Route
+            path="/profile/:username"
+            exact
+            element={
+              <ProtectedRoute>
+                <Profile />
               </ProtectedRoute>
             }
           ></Route>
