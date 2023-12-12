@@ -9,7 +9,6 @@ function Profile() {
   const user = JSON.parse(localStorage.getItem("user"));
   const [userData, setUserData] = useState(null);
   const [editMode, setEditMode] = useState(false);
-  const [editedUsername, setEditedUsername] = useState("");
   const [editedEmail, setEditedEmail] = useState("");
   const [editedPassword, setEditedPassword] = useState("");
   const [editedPhone, setEditedPhone] = useState("");
@@ -19,7 +18,7 @@ function Profile() {
       try {
         const response = await axios.get(`http://localhost:4000/api/users/profile/${user.username}`);
         setUserData(response.data);
-        
+
         setEditedEmail(response.data.email);
         setEditedPassword(response.data.password);
         setEditedPhone(response.data.phone);
@@ -38,14 +37,12 @@ function Profile() {
   const handleSave = async () => {
     try {
       await axios.put(`http://localhost:4000/api/users/profile/${user.username}`, {
-        
         email: editedEmail,
         password: editedPassword,
         phone: editedPhone,
       });
       setUserData({
         ...userData,
-        
         email: editedEmail,
         password: editedPassword,
         phone: editedPhone,
@@ -55,6 +52,48 @@ function Profile() {
     } catch (error) {
       console.error("Error updating user data:", error);
     }
+  };
+
+  const inputStyle = {
+    width: "100%",
+    padding: "8px",
+    margin: "8px 0",
+    boxSizing: "border-box",
+  };
+
+  const buttonStyle = {
+    backgroundColor: "#4CAF50",
+    color: "white",
+    padding: "10px 15px",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+  };
+
+  const labelStyle = {
+    display: "block",
+    marginTop: "10px",
+    marginBottom: "5px",
+    fontWeight: "bold",
+  };
+
+  const readOnlyInputStyle = {
+    ...inputStyle,
+    cursor: "not-allowed",
+    backgroundColor: "#f2f2f2",
+  };
+
+  const profileContainerStyle = {
+    maxWidth: "600px",
+    margin: "auto",
+    padding: "20px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    borderRadius: "8px",
+    backgroundColor: "#fff",
+  };
+
+  const nonEditModeStyle = {
+    textAlign: "left",
   };
 
   return (
@@ -67,34 +106,52 @@ function Profile() {
       <Row className="main-row" justify="center">
         {userData ? (
           <>
-            {editMode ? (
-              <>
-                <label>Username:</label>
-                <label>{user.username}</label>
-                <label>Email:</label>
-                <input value={editedEmail} onChange={(e) => setEditedEmail(e.target.value)} />
-                <label>Password:</label>
-                <input value={editedPassword} onChange={(e) => setEditedPassword(e.target.value)} />
-                <label>Phone:</label>
-                <input value={editedPhone} onChange={(e) => setEditedPhone(e.target.value)} />
-              </>
-            ) : (
-              <>
-                <p>Username: {userData.username}</p>
-                <p>Email: {userData.email}</p>
-                <p>Password: {userData.password}</p>
-                <p>Phone: {userData.phone}</p>
-              </>
-            )}
-            {editMode ? (
-              <>
-                <button onClick={handleSave}>Save</button>
-              </>
-            ) : (
-              <>
-                <button onClick={handleEdit}>Edit</button>
-              </>
-            )}
+            <div style={profileContainerStyle}>
+              {editMode ? (
+                <>
+                  <label style={labelStyle}>Username:</label>
+                  <input
+                    value={user.username}
+                    readOnly
+                    style={readOnlyInputStyle}
+                  />
+                  <label style={labelStyle}>Email:</label>
+                  <input
+                    value={editedEmail}
+                    onChange={(e) => setEditedEmail(e.target.value)}
+                    style={inputStyle}
+                  />
+                  <label style={labelStyle}>Password:</label>
+                  <input
+                    value={editedPassword}
+                    onChange={(e) => setEditedPassword(e.target.value)}
+                    style={inputStyle}
+                  />
+                  <label style={labelStyle}>Phone:</label>
+                  <input
+                    value={editedPhone}
+                    onChange={(e) => setEditedPhone(e.target.value)}
+                    style={inputStyle}
+                  />
+                </>
+              ) : (
+                <div style={nonEditModeStyle}>
+                  <p style={labelStyle}>Username: {userData.username}</p>
+                  <p style={labelStyle}>Email: {userData.email}</p>
+                  <p style={labelStyle}>Password: {userData.password}</p>
+                  <p style={labelStyle}>Phone: {userData.phone}</p>
+                </div>
+              )}
+              {editMode ? (
+                <button style={buttonStyle} onClick={handleSave}>
+                  Save
+                </button>
+              ) : (
+                <button style={buttonStyle} onClick={handleEdit}>
+                  Edit
+                </button>
+              )}
+            </div>
           </>
         ) : (
           <Spinner />
