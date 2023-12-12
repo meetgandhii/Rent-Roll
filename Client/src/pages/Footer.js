@@ -60,7 +60,7 @@ const Footer = () => {
                         style={{ height: "80px", width: "80px" }}
                         alt="logo"
                       />
-                      <h3 style={{ color: "#00ffffdf", fontFamily: "Barrio" }}>
+                      <h3 style={{ color: "#DB91EFdf", fontFamily: "Barrio" }}>
                       Rent & Roll
                       </h3>
                     </a>

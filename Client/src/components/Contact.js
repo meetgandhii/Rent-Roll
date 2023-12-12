@@ -42,7 +42,7 @@ const Contact = () => {
           }}
         >
           Contact
-          <span style={{ color: "#00ffffdf" }}> US</span>
+          <span style={{ color: "#4B0082df" }}> US</span>
         </h2>
         <div>
           <div className="contact-container">
@@ -85,7 +85,7 @@ const Contact = () => {
                   <input
                     type="submit"
                     className="btn btn-info"
-                    value="Send Message"
+                    value="Send Message" 
                   />
                 </div>
               </div>

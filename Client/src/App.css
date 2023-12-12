@@ -47,11 +47,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(transparent, #00ffffdf);
+  background: linear-gradient(transparent, #4B0082df);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(transparent, #01bf86);
+  background: linear-gradient(transparent, #551a7fdf);
   border-radius: 6px;
 }

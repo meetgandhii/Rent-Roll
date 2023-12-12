@@ -26,7 +26,7 @@ const Map = () => {
           fontWeight: "700",
         }}
       >
-        OUR <span style={{ color: "#00ffffdf" }}>LOCATION</span>
+        OUR <span style={{ color: "#4B0082df" }}>LOCATION</span>
       </h2>
       <ReactMapGL
         {...viewport}

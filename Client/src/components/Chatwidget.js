@@ -12,7 +12,7 @@ const Chatwidget = () => {
 
   useEffect(() => {
     addResponseMessage(
-      `Welcome ${user.username}, I'm Marvin 🤖🖐️ a bot. How can i help you today?`
+      `Welcome ${user.username}, I'm Fiero 🤖🖐️ a bot. How can i help you today?`
     );
   }, []);
   const handleNewUserMessage = (newMessage) => {
@@ -40,7 +40,7 @@ const Chatwidget = () => {
       newMessage.includes("your name") ||
       newMessage.includes("Your name")
     ) {
-      addResponseMessage(`I'm marvin`);
+      addResponseMessage(`I'm fiero`);
     } else if (
       newMessage.includes("my name") ||
       newMessage.includes("My name")
@@ -134,7 +134,7 @@ const Chatwidget = () => {
       newMessage.includes("are you robot") ||
       newMessage.includes("Who are you")
     ) {
-      addResponseMessage(`I'm Marvin & I'm a Bot 🤖`);
+      addResponseMessage(`I'm Fiero & I'm a Bot 🤖`);
     } else {
       addResponseMessage(
         `Sorry, I'm currently learning your language. I don't know the answer. Please contact on this number +923310145083.`
@@ -148,7 +148,6 @@ const Chatwidget = () => {
         title="Chat with us!"
         subtitle="We typically reply in few minutes."
         profileAvatar={chatbot}
-        // showCloseButton="true"
         emojis="true"
       />
     </div>

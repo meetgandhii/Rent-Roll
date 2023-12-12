@@ -57,8 +57,8 @@ function UserBookings() {
                 gutter={16}
                 className="Userbooking bs1 mt-2 mb-2 text-left"
                 style={{
-                  backgroundColor: "#00ffffdf",
-                  borderRadius: "5px",
+                  backgroundColor: "#4B0082df",
+                  borderRadius: "5px", color: "#fff"
                 }}
                 key={booking._id}
               >
@@ -114,9 +114,10 @@ function UserBookings() {
                 <Col lg={6} sm={24} className="text-right">
                   {booking.car ? (
                     <img
-                      style={{ borderRadius: 5 }}
+                      style={{ borderRadius: 5, objectFit: "contain" }}
                       src={booking.car.image}
                       height="140"
+                      width="200"
                       className="p-2"
                       alt="Car"
                     />
