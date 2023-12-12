@@ -28,8 +28,7 @@ const Services = () => {
                 </i>
                 <h4>Fast & Easy Booking</h4>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                  We provide fast and reliable services which makes way for easy bookings.
                 </p>
               </div>
             </div>
@@ -41,8 +40,7 @@ const Services = () => {
                 </i>
                 <h4>Any Pickup Location</h4>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                  Pickups for our cars are available at every location in and around boston.
                 </p>
               </div>
             </div>
@@ -54,8 +52,7 @@ const Services = () => {
                 </i>
                 <h4>No Booking Charges</h4>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                  There are no booking charges that are applied while booking from our website.
                 </p>
               </div>
             </div>
@@ -67,8 +64,7 @@ const Services = () => {
                 </i>
                 <h4>Free Maintenance</h4>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                 We provide free maintainance services for all of our cars at all major locations.
                 </p>
               </div>
             </div>
@@ -80,8 +76,7 @@ const Services = () => {
                 </i>
                 <h4>Fully Insured</h4>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                  Our booking charges fully include the damage and the third party insurance.
                 </p>
               </div>
             </div>
@@ -93,8 +88,7 @@ const Services = () => {
                 </i>
                 <h4>24/7 Support</h4>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry.
+                  We provide 24/7 online support to all our customers with minimum wait time.
                 </p>
               </div>
             </div>

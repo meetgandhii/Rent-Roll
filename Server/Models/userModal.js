@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  subscriber: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const userModel = mongoose.model("users", userSchema);

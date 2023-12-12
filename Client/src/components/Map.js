@@ -32,7 +32,7 @@ const Map = () => {
         {...viewport}
         mapboxApiAccessToken="pk.eyJ1IjoibnVtYW5hbmVlcyIsImEiOiJja3kwMWExZmcwYTBuMnFxZGMwc2VtNngzIn0.AdcyN5u-Ab22UUFSYcaz8g"
         onViewportChange={(viewport) => setViewport(viewport)}
-        mapStyle={"mapbox://styles/numananees/cky01qc5u382o14l5u46kvve1"}
+        mapStyle={"mapbox://styles/meetgandhi/cky01qc5u382o14l5u46kvve1"}
       >
         <Marker latitude={latitude} longitude={longitude}>
           <div className="marker">

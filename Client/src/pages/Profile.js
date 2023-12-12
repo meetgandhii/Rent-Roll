@@ -4,7 +4,8 @@ import { Row } from "antd";
 import Spinner from "../components/Spinner";
 import Footer from "./Footer";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
+ 
 function Profile() {
   const user = JSON.parse(localStorage.getItem("user"));
   const [userData, setUserData] = useState(null);
@@ -12,13 +13,15 @@ function Profile() {
   const [editedEmail, setEditedEmail] = useState("");
   const [editedPassword, setEditedPassword] = useState("");
   const [editedPhone, setEditedPhone] = useState("");
-
+ 
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/users/profile/${user.username}`);
+        const response = await axios.get(
+          `http://localhost:4000/api/users/profile/${user.username}`
+        );
         setUserData(response.data);
-
+ 
         setEditedEmail(response.data.email);
         setEditedPassword(response.data.password);
         setEditedPhone(response.data.phone);
@@ -26,63 +29,66 @@ function Profile() {
         console.error("Error fetching user data:", error);
       }
     };
-
+ 
     fetchUserData();
   }, []);
-
+ 
   const handleEdit = () => {
     setEditMode(true);
   };
-
+ 
   const handleSave = async () => {
     try {
-      await axios.put(`http://localhost:4000/api/users/profile/${user.username}`, {
-        email: editedEmail,
-        password: editedPassword,
-        phone: editedPhone,
-      });
+      await axios.put(
+        `http://localhost:4000/api/users/profile/${user.username}`,
+        {
+          email: editedEmail,
+          password: editedPassword,
+          phone: editedPhone,
+        }
+      );
       setUserData({
         ...userData,
         email: editedEmail,
         password: editedPassword,
         phone: editedPhone,
       });
-
+ 
       setEditMode(false);
     } catch (error) {
       console.error("Error updating user data:", error);
     }
   };
-
+ 
   const inputStyle = {
     width: "100%",
     padding: "8px",
     margin: "8px 0",
     boxSizing: "border-box",
   };
-
+ 
   const buttonStyle = {
-    backgroundColor: "#4CAF50",
+    backgroundColor: "#4B0082df",
     color: "white",
     padding: "10px 15px",
     border: "none",
     borderRadius: "4px",
     cursor: "pointer",
   };
-
+ 
   const labelStyle = {
     display: "block",
     marginTop: "10px",
     marginBottom: "5px",
     fontWeight: "bold",
   };
-
+ 
   const readOnlyInputStyle = {
     ...inputStyle,
     cursor: "not-allowed",
     backgroundColor: "#f2f2f2",
   };
-
+ 
   const profileContainerStyle = {
     maxWidth: "600px",
     margin: "auto",
@@ -91,11 +97,11 @@ function Profile() {
     borderRadius: "8px",
     backgroundColor: "#fff",
   };
-
+ 
   const nonEditModeStyle = {
     textAlign: "left",
   };
-
+ 
   return (
     <DefaultLayout>
       <Row className="main-row" justify="center">
@@ -111,12 +117,14 @@ function Profile() {
                 <>
                   <label style={labelStyle}>Username:</label>
                   <input
+                    className="form-control"
                     value={user.username}
                     readOnly
                     style={readOnlyInputStyle}
                   />
                   <label style={labelStyle}>Email:</label>
                   <input
+                    className="form-control"
                     value={editedEmail}
                     onChange={(e) => setEditedEmail(e.target.value)}
                     style={inputStyle}
@@ -135,12 +143,36 @@ function Profile() {
                   />
                 </>
               ) : (
-                <div style={nonEditModeStyle}>
-                  <p style={labelStyle}>Username: {userData.username}</p>
-                  <p style={labelStyle}>Email: {userData.email}</p>
-                  <p style={labelStyle}>Password: {userData.password}</p>
-                  <p style={labelStyle}>Phone: {userData.phone}</p>
-                </div>
+                <>
+                  <label style={labelStyle}>Username:</label>
+                  <input
+                    className="form-control"
+                    value={userData.username}
+                    readOnly
+                    style={readOnlyInputStyle}
+                  />
+                  <label style={labelStyle}>Email:</label>
+                  <input
+                    className="form-control"
+                    value={userData.email}
+                    readOnly
+                    style={readOnlyInputStyle}
+                  />
+                  <label style={labelStyle}>Password:</label>
+                  <input
+                    className="form-control"
+                    value={userData.password}
+                    readOnly
+                    style={readOnlyInputStyle}
+                  />
+                  <label style={labelStyle}>Phone:</label>
+                  <input
+                    className="form-control"
+                    value={userData.phone}
+                    readOnly
+                    style={readOnlyInputStyle}
+                  />
+                </>
               )}
               {editMode ? (
                 <button style={buttonStyle} onClick={handleSave}>
@@ -151,15 +183,23 @@ function Profile() {
                   Edit
                 </button>
               )}
+              <Link to="/userbookings" style={{ textDecoration: "none" }}>
+        {" "}
+        <button className="form-control" style={{ padding: "10px 0", margin: "10px" }}>
+          My Bookings
+        </button>
+      </Link>
             </div>
           </>
         ) : (
           <Spinner />
         )}
       </Row>
+      
       <Footer />
     </DefaultLayout>
   );
 }
-
+ 
 export default Profile;
+ 

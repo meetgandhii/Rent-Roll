@@ -14,7 +14,7 @@ function AdminHome() {
   const { cars } = useSelector((state) => state.carsReducer);
   const { loading } = useSelector((state) => state.alertsReducer);
   const [totalCars, setTotalCars] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(localStorage.getItem("adminBookingsSearchTerm") ||"");
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,6 +22,7 @@ function AdminHome() {
   }, []);
   const handleSearch = (searchValue) => {
     setSearchTerm(searchValue);
+    localStorage.setItem("adminBookingsSearchTerm", searchValue);
 
     const filteredCars = cars.filter((car) =>
       car.name.toLowerCase().includes(searchValue.toLowerCase())
@@ -29,7 +30,6 @@ function AdminHome() {
 
     setTotalCars(filteredCars);
   };
-
   useEffect(() => {
     setTotalCars(cars);
   }, []);
@@ -54,11 +54,9 @@ function AdminHome() {
                   type="text"
                   placeholder="Search by name"
                   value={searchTerm}
-                  onChange={(e) => handleSearch(e.target.value)}
+                  onChange={(e) => handleSearch(e.target.value)}  style={{padding: "10px", borderRadius: "10px", border: "none"}}
                 />
-                <button className="btnAdd" onClick={handleSearch}>
-                  Search
-                </button>
+               
               </div>
             </div>
           </Col>

@@ -6,18 +6,25 @@ import { Col, Row } from "antd";
 import Spinner from "../components/Spinner";
 import moment from "moment";
 import defaultcar from "../images/defaultcar.jpg";
+import Footer from "./Footer";
 
 function UserBookings() {
   const dispatch = useDispatch();
   const { bookings } = useSelector((state) => state.bookingsReducer);
   const { loading } = useSelector((state) => state.alertsReducer);
   const user = JSON.parse(localStorage.getItem("user"));
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(
+    localStorage.getItem("userBookingsSearchTerm") || ""
+  );
 
   useEffect(() => {
     dispatch(getAllBookings());
   }, [searchTerm]);
-
+  const handleSearchTermChange = (e) => {
+    const newSearchTerm = e.target.value;
+    setSearchTerm(newSearchTerm);
+    localStorage.setItem("userBookingsSearchTerm", newSearchTerm);
+  };
   return (
     <DefaultLayout>
       {loading && <Spinner />}
@@ -31,10 +38,10 @@ function UserBookings() {
         {user.admin ? "All Recent Bookings" : "Your Booking History"}
       </h3>
       <input
-        type="text"
+        type="text" style={{padding: "10px", borderRadius: "10px", border: "none"}}
         placeholder="Search..."
         value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        onChange={handleSearchTermChange}
       />
       <Row justify="center" gutter={16}>
         <Col lg={16} sm={24} style={{ color: "darkslategray" }}>
@@ -135,7 +142,9 @@ function UserBookings() {
             ))}
         </Col>
       </Row>
+      <Footer/>
     </DefaultLayout>
+    
   );
 }
 

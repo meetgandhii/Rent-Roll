@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NumanAnees/CRP.git"
+    "url": "git+https://github.com/meetgandhii/Rent-Roll.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NumanAnees/CRP/issues"
+    "url": "https://github.com/meetgandhii/Rent-Roll/issues"
   },
-  "homepage": "https://github.com/NumanAnees/CRP#readme",
+  "homepage": "https://github.com/meetgandhii/Rent-Roll/blob/master/README.md",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",

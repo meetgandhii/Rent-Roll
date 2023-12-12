@@ -4,7 +4,7 @@ body {
   margin-top: 4.4rem !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #EDC9F99f !important;
+  background-color: #f3cdfeec !important;
   overflow-x: hidden !important;
 }
 .Spinner {
@@ -14,8 +14,8 @@ body {
   z-index: 1;
 }
 .box-shadow1 {
-  box-shadow: rgba(75, 0, 130, 0.644) 0px 1.5px;
-  background-color: #2f2e2e !important;
+  box-shadow: rgba(90, 0, 154, 0.605) 0px 1.5px;
+  background-color: #390c46ec !important;
   position: fixed;
   z-index: 100;
   width: 100%;
@@ -24,14 +24,14 @@ body {
   top: 0;
 }
 .bs2 {
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(90, 0, 154, 0.605) 0px 2px 4px 0px,
+  rgba(90, 0, 154, 0.605) 0px 2px 16px 0px;
 }
 
 h1 {
   font-size: 30px;
   font-weight: bold;
-  color: #DB91EFdf !important;
+  color: #f3cdfeec !important;
 }
 p {
   margin: 5px !important;
@@ -44,8 +44,8 @@ p {
 .header .ant-btn {
   box-shadow: none !important;
   background-color: rgb(255, 255, 255) !important;
-  color: #4B0082df !important;
-  border: 1px solid #4B0082 !important;
+  color: rgba(90, 0, 154, 0.832) !important;
+  border: 1px solid rgba(90, 0, 154, 0.862) !important;
   padding: 5px 15px !important;
   outline: none !important;
   font-family: "Courier New", Courier, monospace !important;
@@ -65,7 +65,7 @@ p {
 .btn1 {
   box-shadow: none !important;
   background-color: white;
-  color: #4B0082;
+  color: rgba(90, 0, 154, 0.862);
   border: 1px solid #959595 !important;
   height: 35px;
   outline: none !important;
@@ -81,23 +81,24 @@ p {
   width: 272px;
   max-width: 272px;
   min-width: 272px;
-  background-color: #4B0082;
+  background-color: rgba(82, 0, 141, 0.519);
 }
 /* ------------------------------------login/Register-------------------------------------- */
 
 .login {
   padding-top: 50px;
-  min-height: 100vh;
+  min-height: max-content;
   overflow-x: hidden;
+  overflow-y: hidden;
   display: flex;
   justify-content: center;
 }
 .login label {
-  color: rgb(236, 236, 236) !important;
+  color: #f3cdfeec !important;
   font-weight: 500;
 }
 .login-form {
-  background-color: #0d8585;
+  background-color: #7e2796ec;
   height: fit-content;
   width: fit-content;
   border-radius: 5px;
@@ -193,7 +194,7 @@ p {
 }
 .ant-picker-range {
   padding: 12px !important;
-  background-color: #4B0082 !important;
+  background-color: #60047aec !important;
   color: white !important;
   border: 1px solid white;
 }
@@ -202,10 +203,10 @@ p {
   color: white !important;
 }
 .ant-modal-title {
-  color: #4B0082 !important;
+  color: #7e2796 !important;
 }
 .rcw-title {
-  color: white;
+  color: #60047aec;
 }
 /* ---------------------------------------------------------------------------------- */
 /************************ Footer *********************/
@@ -215,7 +216,7 @@ ul {
   padding: 0px;
 }
 .footer-section {
-  background: #202020;
+  background: #390c46ec;
   position: relative;
 }
 .footer-cta {
@@ -238,7 +239,7 @@ ul {
   margin-bottom: 2px;
 }
 .cta-text span {
-  color: #757575;
+  color: #e0dfdf;
   font-size: 15px;
 }
 .footer-content {
@@ -262,7 +263,7 @@ ul {
 .footer-text p {
   margin-bottom: 14px;
   font-size: 14px;
-  color: #7e7e7e;
+  color: #dfdfdf;
   line-height: 28px;
 }
 .footer-social-icon span {
@@ -308,7 +309,7 @@ ul {
   bottom: -15px;
   height: 2px;
   width: 50px;
-  background: #DB91EFdf;
+  background: #f3cdfeec ;
 }
 .footer-widget ul li {
   display: inline-block;
@@ -317,10 +318,10 @@ ul {
   margin-bottom: 12px;
 }
 .footer-widget ul li a:hover {
-  color: #DB91EFdf;
+  color: #f3cdfeec ;
 }
 .footer-widget ul li a {
-  color: #878787;
+  color: #cac9ca;
   text-transform: capitalize;
 }
 .subscribe-form {
@@ -330,14 +331,14 @@ ul {
 .subscribe-form input {
   width: 100%;
   padding: 14px 28px;
-  background: #2e2e2e;
-  border: 1px solid #2e2e2e;
+  background: #f3cdfeec;
+  border: 1px solid #DB91EFdf;
   color: #fff;
 }
 .subscribe-form button {
   position: absolute;
   right: 0;
-  background: #DB91EFdf;
+  background: #380b44d6 ;
   padding: 13px 20px;
   border: 1px solid #DB91EFdf;
   top: 0;
@@ -348,7 +349,7 @@ ul {
   transform: rotate(-6deg);
 }
 .copyright-area {
-  background: #2f2e2e;
+  background: #380b44d6;
   padding: 25px 0;
 }
 .copyright-text p {
@@ -436,7 +437,7 @@ ul {
 }
 
 .site-heading h4::before {
-  background: #4B0082df none repeat scroll 0 0;
+  background: rgba(136, 61, 182, 0.84) none repeat scroll 0 0;
   bottom: 0;
   content: "";
   height: 2px;
@@ -466,13 +467,13 @@ ul {
 }
 
 .we-offer-area .our-offer-carousel .owl-dots .owl-dot.active span {
-  background: #4B0082df none repeat scroll 0 0;
-  border-color: #4B0082df;
+  background: rgba(136, 61, 182, 0.84) none repeat scroll 0 0;
+  border-color: rgba(136, 61, 182, 0.84);
 }
 
 .we-offer-area .item {
   background: #ffffff none repeat scroll 0 0;
-  border-left: 2px solid #4B0082df;
+  border-left: 2px solid rgba(136, 61, 182, 0.84);
   -moz-box-shadow: 0 0 10px #cccccc;
   -webkit-box-shadow: 0 0 10px #cccccc;
   -o-box-shadow: 0 0 10px #cccccc;
@@ -588,7 +589,7 @@ ul {
 }
 
 .we-offer-area .item::after {
-  background: #4B0082df none repeat scroll 0 0;
+  background: #60047aec none repeat scroll 0 0;
   content: "";
   height: 100%;
   left: -100%;
@@ -652,7 +653,7 @@ ul {
   width: 120px;
 }
 .heading-service {
-  color: white !important;
+  color: rgba(136, 61, 182, 0.84) !important;
 }
 .icon-image {
   height: 105px;
@@ -701,7 +702,7 @@ ul {
 .btnerror {
   box-shadow: none !important;
   background-color: white;
-  color: #4B0082df;
+  color: #510e81df;
   border: 1px solid #959595 !important;
   font-size: 1.3rem;
   outline: none !important;
@@ -714,7 +715,7 @@ ul {
   padding: 0.3rem;
   font-size: 17px;
   border-radius: 5px;
-  color: #4B0082;
+  color: #4c0082c8;
   background-color: white;
   font-weight: 600;
 }

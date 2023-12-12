@@ -81,6 +81,7 @@ function DefaultLayout(props) {
                     marginLeft: "10px",
                     marginTop: "10px",
                     cursor: "pointer",
+                    color: "#f3cdfeec !important"
                   }}
                 >
                   Rent & Roll

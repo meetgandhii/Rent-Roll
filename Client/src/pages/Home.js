@@ -123,10 +123,10 @@ function Home() {
                     </div>
                     <div className="car-content d-flex align-items-center justify-content-between">
                       <div>
-                        <p style={{ fontWeight: "bold", color: "#222f35 " }}>
+                        <p style={{ fontWeight: "bold", color: "#fff " }}>
                           {car.name}
                         </p>
-                        <p style={{ color: "#222f35" }}>
+                        <p style={{ color: "#fff" }}>
                           ${car.rentPerHour} Per Hour /-
                         </p>
                       </div>

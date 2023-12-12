@@ -25,6 +25,7 @@ const id = generateObjectId();
     const newuser = new User({
       ...req.body,
       _id: id,
+      subscriber: false,
     });
     await newuser.save();
     res.send("User registered successfully");
@@ -76,3 +77,5 @@ exports.getAllUsers = async (req, res) => {
     return res.status(400).json(error);
   }
 };
+
+
